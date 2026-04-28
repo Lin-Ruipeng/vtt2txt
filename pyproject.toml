@@ -1,0 +1,21 @@
+[project]
+name = "vtt2txt"
+version = "0.1.0"
+description = "Convert VTT subtitle files to plain text"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+vtt2txt = "vtt2txt.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vtt2txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
